@@ -128,7 +128,7 @@
     - Drinks
 
 - type: entity
-  parent: [ ReagentDispenserBase, SodaDispenserEmpty ] # Orion-Edit
+  parent: SodaDispenserEmpty
   id: SodaDispenser
   name: soda dispenser
   description: A beverage dispenser with a selection of soda and several other common beverages. Has a single fill slot for containers.

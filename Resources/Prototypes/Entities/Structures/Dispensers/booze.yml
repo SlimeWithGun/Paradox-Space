@@ -133,7 +133,7 @@
   name: booze dispenser
 #  suffix: Filled # Orion-Edit: Removed
   description: A booze dispenser with a single slot for a container to be filled.
-  parent: [ ReagentDispenserBase, BoozeDispenserEmpty ] # Orion-Edit
+  parent: BoozeDispenserEmpty
   components:
   # Orion-Start
   - type: EnergyReagentDispenser
