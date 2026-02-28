@@ -34,7 +34,7 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
     private RulesPopup? _rulesPopup;
     private RulesAndInfoWindow? _infoWindow;
 
-    private static readonly ProtoId<GuideEntryPrototype> DefaultRuleset = "OrionRuleset"; // Orion-Edit
+    private static readonly ProtoId<GuideEntryPrototype> DefaultRuleset = "ParadoxRuleset"; // Paradox-Edit: Orion > Paradox
 
     public ProtoId<GuideEntryPrototype> RulesEntryId = DefaultRuleset;
 

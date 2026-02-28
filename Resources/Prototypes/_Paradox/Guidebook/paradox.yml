@@ -1,0 +1,10 @@
+- type: guideEntry
+  id: Paradox
+  name: guide-entry-paradox
+  text: "/ServerInfo/_Paradox/Guidebook/Paradox.xml"
+  priority: -1
+  children:
+  - ParadoxRuleset
+  - SpaceLaw
+  - SOP
+  - OrionAntagonistGuide

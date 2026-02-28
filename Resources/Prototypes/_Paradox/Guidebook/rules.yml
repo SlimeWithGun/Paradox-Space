@@ -1,0 +1,60 @@
+# Default rules
+- type: guideEntry
+  id: ParadoxRuleset
+  name: guide-entry-server-rules
+  text: "/ServerInfo/_Paradox/Guidebook/ServerRules/Ruleset.xml"
+  children:
+  - ParadoxRule0
+  - ParadoxRule1
+  - ParadoxRule2
+  - ParadoxRule3
+  - ParadoxRule4
+  - ParadoxRule5
+  - ParadoxRule6
+  - ParadoxRule7
+  - ParadoxPunishmentTypes
+
+- type: guideEntry
+  id: ParadoxPunishmentTypes
+  name: guide-entry-server-rules-punishment
+  text: "/ServerInfo/_Paradox/Guidebook/ServerRules/PunishmentTypes.xml"
+
+- type: guideEntry
+  id: ParadoxRule0
+  name: guide-entry-server-rules-rule-0
+  text: "/ServerInfo/_Paradox/Guidebook/ServerRules/Rule0.xml"
+
+- type: guideEntry
+  id: ParadoxRule1
+  name: guide-entry-server-rules-rule-1
+  text: "/ServerInfo/_Paradox/Guidebook/ServerRules/Rule1.xml"
+
+- type: guideEntry
+  id: ParadoxRule2
+  name: guide-entry-server-rules-rule-2
+  text: "/ServerInfo/_Paradox/Guidebook/ServerRules/Rule2.xml"
+
+- type: guideEntry
+  id: ParadoxRule3
+  name: guide-entry-server-rules-rule-3
+  text: "/ServerInfo/_Paradox/Guidebook/ServerRules/Rule3.xml"
+
+- type: guideEntry
+  id: ParadoxRule4
+  name: guide-entry-server-rules-rule-4
+  text: "/ServerInfo/_Paradox/Guidebook/ServerRules/Rule4.xml"
+
+- type: guideEntry
+  id: ParadoxRule5
+  name: guide-entry-server-rules-rule-5
+  text: "/ServerInfo/_Paradox/Guidebook/ServerRules/Rule5.xml"
+
+- type: guideEntry
+  id: ParadoxRule6
+  name: guide-entry-server-rules-rule-6
+  text: "/ServerInfo/_Paradox/Guidebook/ServerRules/Rule6.xml"
+
+- type: guideEntry
+  id: ParadoxRule7
+  name: guide-entry-server-rules-rule-7
+  text: "/ServerInfo/_Paradox/Guidebook/ServerRules/Rule7.xml"

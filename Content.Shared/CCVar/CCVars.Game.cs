@@ -30,7 +30,7 @@ public sealed partial class CCVars
     ///     Controls the duration of the lobby timer in seconds. Defaults to 2 minutes and 30 seconds.
     /// </summary>
     public static readonly CVarDef<int>
-        GameLobbyDuration = CVarDef.Create("game.lobbyduration", 150, CVar.ARCHIVE);
+        GameLobbyDuration = CVarDef.Create("game.lobbyduration", 180, CVar.ARCHIVE); // Paradox-Edit: 150 > 180
 
     /// <summary>
     ///     Controls if players can latejoin at all.
@@ -146,7 +146,7 @@ public sealed partial class CCVars
         CVarDef.Create("game.diagonalmovement", true, CVar.ARCHIVE);
 
     public static readonly CVarDef<int> SoftMaxPlayers =
-        CVarDef.Create("game.soft_max_players", 30, CVar.SERVERONLY | CVar.ARCHIVE);
+        CVarDef.Create("game.soft_max_players", 80, CVar.SERVERONLY | CVar.ARCHIVE); // Paradox-Edit: 30 > 80
 
     /// <summary>
     ///     If a player gets denied connection to the server,
@@ -186,7 +186,7 @@ public sealed partial class CCVars
     ///     Show reason of disconnect for user or not.
     /// </summary>
     public static readonly CVarDef<bool> PanicBunkerShowReason =
-        CVarDef.Create("game.panic_bunker.show_reason", false, CVar.SERVERONLY);
+        CVarDef.Create("game.panic_bunker.show_reason", true, CVar.SERVERONLY); // Paradox-Edit: false > true
 
     /// <summary>
     ///     Minimum age of the account (from server's PoV, so from first-seen date) in minutes.
@@ -198,7 +198,7 @@ public sealed partial class CCVars
     ///     Minimal overall played time.
     /// </summary>
     public static readonly CVarDef<int> PanicBunkerMinOverallMinutes =
-        CVarDef.Create("game.panic_bunker.min_overall_minutes", 600, CVar.SERVERONLY);
+        CVarDef.Create("game.panic_bunker.min_overall_minutes", 300, CVar.SERVERONLY); // Paradox-Edit: 600 > 300
 
     /// <summary>
     ///     A custom message that will be used for connections denied to the panic bunker
@@ -241,7 +241,7 @@ public sealed partial class CCVars
     /// Should an admin message be made if the connection got rejected cause of ipintel?
     /// </summary>
     public static readonly CVarDef<bool> GameIPIntelAlertAdminReject =
-        CVarDef.Create("game.ipintel_alert_admin_rejected", false, CVar.SERVERONLY);
+        CVarDef.Create("game.ipintel_alert_admin_rejected", true, CVar.SERVERONLY); // Paradox-Edit: false > true
 
     /// <summary>
     /// A contact email to be sent along with the request. Required by IPIntel

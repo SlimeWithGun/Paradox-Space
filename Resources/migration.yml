@@ -197,15 +197,17 @@ ClothingNeckScarfStripedPan: ClothingNeckScarfStripedBlack
 ClothingNeckScarfStripedNonBinary: ClothingNeckScarfStripedBlack
 ClothingNeckScarfStripedRainbow: ClothingNeckScarfStripedBlack
 ClothingNeckScarfStripedTrans: ClothingNeckScarfStripedBlack
-ClothingNeckCloakAce: null
-ClothingNeckCloakAro: null
-ClothingNeckCloakBi: null
-ClothingNeckCloakIntersex: null
-ClothingNeckCloakLesbian: null
-ClothingNeckCloakTrans: null
-ClothingNeckCloakGay: null
-ClothingNeckCloakEnby: null
-ClothingNeckCloakPan: null
+# Paradox-Edit-Start
+#ClothingNeckCloakAce: null
+#ClothingNeckCloakAro: null
+#ClothingNeckCloakBi: null
+#ClothingNeckCloakIntersex: null
+#ClothingNeckCloakLesbian: null
+#ClothingNeckCloakTrans: null
+#ClothingNeckCloakGay: null
+#ClothingNeckCloakEnby: null
+#ClothingNeckCloakPan: null
+# Paradox-Edit-End
 VendingMachinePride: RandomVending
 
 DoorXenoResin: ResinDoor

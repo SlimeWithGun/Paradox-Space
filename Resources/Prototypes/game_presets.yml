@@ -150,7 +150,7 @@
   - extended
   - shittersafari
   name: extended-title
-  showInVote: false #2boring2vote
+  showInVote: true #2boring2vote # Paradox-Edit: false > True
   description: extended-description
   rules:
   - BasicStationEventScheduler
@@ -164,7 +164,7 @@
   - greenshift
   - shittersafarideluxeedition
   name: greenshift-title
-  showInVote: false #4boring4vote
+  showInVote: true #4boring4vote # Paradox-Edit: false > True
   description: greenshift-description
   rules:
   - SpaceTrafficControlFriendlyEventScheduler
@@ -176,7 +176,7 @@
     - secret
     - sekrit
   name: secret-title
-  showInVote: false # Goob - Game Director
+  showInVote: true # Goob - Game Director # Paradox-Edit: false > true
   description: secret-description
   rules:
     - Secret
@@ -242,7 +242,7 @@
   name: death-match-title
   description: death-match-description
   maxPlayers: 15
-  showInVote: true
+  showInVote: false # Paradox-Edit: true > false
   isMiniGame: true # Orion
   supportedMaps: DeathMatchMapPool
   rules:
