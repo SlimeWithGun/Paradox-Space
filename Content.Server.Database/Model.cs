@@ -180,6 +180,7 @@ namespace Content.Server.Database
         public DbSet<RoleWhitelist> RoleWhitelists { get; set; } = null!;
         public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
         public DbSet<IPIntelCache> IPIntelCache { get; set; } = null!;
+        public DbSet<DiscordUser> DiscordUser { get; set; } = null!; // Paradox-Tweak: DiscordAuth
 
         // RMC14
         public DbSet<RMCDiscordAccount> RMCDiscordAccounts { get; set; } = default!;
@@ -611,6 +612,11 @@ namespace Content.Server.Database
             modelBuilder.Entity<PollVote>()
                 .HasIndex(v => new { v.PollId, v.PlayerUserId, v.PollOptionId })
                 .IsUnique();
+            // Paradox-Start: DiscordAuth
+            modelBuilder.Entity<DiscordUser>()
+                .HasIndex(p => new { p.UserId, p.DiscordId })
+                .IsUnique();
+            // Paradox-End
         }
 
         public virtual IQueryable<AdminLog> SearchLogs(IQueryable<AdminLog> query, string searchText)
@@ -1597,4 +1603,15 @@ namespace Content.Server.Database
         /// </summary>
         public float Score { get; set; }
     }
+
+    // Paradox-Start: DiscordAuth
+    public class DiscordUser
+    {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        public Guid UserId { get; set; }
+        [MaxLength(32)]
+        public string DiscordId { get; set; } = default!;
+    }
+    // Paradox-End
 }
