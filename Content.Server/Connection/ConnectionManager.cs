@@ -109,6 +109,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Content.Goobstation.Common.CCVar;
+using Content.Server._Paradox.Discord;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection.IPIntel;
@@ -125,6 +126,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Server.GameObjects;
+using Content.Server._Paradox.Discord;
 
 /*
  * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
@@ -169,6 +172,7 @@ namespace Content.Server.Connection
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly IHttpClientHolder _http = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
+        [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
 
         private ISawmill _sawmill = default!;
         private readonly Dictionary<NetUserId, TimeSpan> _temporaryBypasses = [];
@@ -347,6 +351,26 @@ namespace Content.Server.Connection
             }
 
             var adminData = await _db.GetAdminDataForAsync(e.UserId);
+
+            // Paradox-Start: Check Auth for Discord ID
+            // if (_cfg.GetCVar(CCVars.DiscordAuthEnable) && adminData == null)
+            // if (_cfg.GetCVar(CCVars.DiscordAuthEnable)) // FOR Debug
+            // {
+            //     var discordId = await _discordAuthManager.GetDiscordId(userId);
+            //     if (discordId != null)
+            //     {
+            //         _sawmill.Info($"Discord ID for user {userId.ToString()}: {discordId}");
+            //     }
+            //     else
+            //     {
+            //         _sawmill.Warning($"User {userId.ToString()} is not authorized through discord!!!");
+            //         var code = _discordAuthManager.GenerateUserCode(userId);
+            //         await _discordAuthManager.SendAuthCodeToBot(userId, code);
+            //         _pendingDiscordAuth.Add(userId);
+            //         return null; // Allow connection, but mark for UI
+            //     }
+            // }
+            // // Paradox-End
 
             if (_cfg.GetCVar(CCVars.PanicBunkerEnabled) && adminData == null)
             {
