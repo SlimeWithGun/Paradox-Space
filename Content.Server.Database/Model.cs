@@ -1262,7 +1262,9 @@ namespace Content.Server.Database
         /// Results from rejected connections with external API checking tools
         IPChecks = 5,
         /// Results from rejected connections who are authenticated but have no modern hwid associated with them.
-        NoHwid = 6
+        NoHwid = 6,
+        // Paradox-Tweak: Add DiscordAuth as a connection denial reason for accounts that are authenticated but don't have a linked Discord account, or whose linked Discord account doesn't meet certain criteria (e.g. not being in the official SS14 Discord server).
+        DiscordAuth = 7
     }
 
     public class ServerBanHit
