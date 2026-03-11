@@ -93,6 +93,9 @@ language-Chittin-description =
 language-Xeeplian-name = Xeeplian
 language-Xeeplian-description =
     Our language is highly advanced, efficient and to the point.
+
+language-Arkane-name = Arkane
+language-Arkane-description = The language of the Arkane.
     We have taken a liking to mimic some of the inferior lifeforms' babbling in the further pursuit of Our goals.
 
 # Animal Languages

@@ -1,0 +1,28 @@
+# Spoken by the Arkane race.
+- type: language
+  id: Arkane
+  isVisibleLanguage: true
+  speech:
+    color: "#e478ff"
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+      - рииа
+      - инн
+      - тлаа
+      - айр
+      - коо
+      - бии
+      - иинта
+      - реаа
+      - онт
+      - виер
+      - энк
+      - лааир
+      - оии
+      - кееа
+      - теу
+      - риина
+      - ин

@@ -43,6 +43,9 @@ language-Chittin-description = Язык щелчков и жужжания, тр
 language-Xeeplian-name = Ксиплианский
 language-Xeeplian-description = Наш язык высокоразвит, эффективен и точен. В погоне за Целями Мы переняли некоторые элементы лепета низших форм жизни.
 
+language-Arkane-name = Каукиттен
+language-Arkane-description = Протяжный, чем-то напоминающий Солнечный язык, на котором говорят арканы.
+
 # Animal Languages
 
 language-Cat-name = Кот

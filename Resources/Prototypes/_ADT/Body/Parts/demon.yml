@@ -1,0 +1,79 @@
+# TODO: Add descriptions (many)
+# TODO BODY: Part damage
+- type: entity
+  id: ADTPartDemon
+  parent: BasePart
+  name: "Demon body part"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _ADT/Mobs/Species/Demon/parts.rsi
+  - type: Icon
+    sprite: _ADT/Mobs/Species/Demon/parts.rsi
+  - type: BodyPart
+    species: Demon
+  - type: Damageable
+    damageModifierSet: Demon
+
+- type: entity
+  id: ADTChestDemon
+  name: demon chest
+  parent: [ADTPartDemon, BaseChest]
+  components:
+  - type: Sprite
+    sprite: _ADT/Mobs/Species/Demon/parts.rsi
+    state: chest_m
+
+- type: entity
+  id: ADTGroinDemon
+  name: demon groin
+  parent: [ADTPartDemon, BaseGroin]
+  components:
+  - type: Sprite
+    sprite: _ADT/Mobs/Species/Demon/parts.rsi
+    state: groin_m
+
+- type: entity
+  id: ADTHeadDemon
+  name: demon head
+  parent: [ADTPartDemon, BaseHead]
+
+- type: entity
+  id: ADTLeftArmDemon
+  name: left demon arm
+  parent: [ADTPartDemon, BaseLeftArm]
+
+- type: entity
+  id: ADTRightArmDemon
+  name: right demon arm
+  parent: [ADTPartDemon, BaseRightArm]
+
+- type: entity
+  id: ADTLeftHandDemon
+  name: left demon hand
+  parent: [ADTPartDemon, BaseLeftHand]
+
+- type: entity
+  id: ADTRightHandDemon
+  name: right demon hand
+  parent: [ADTPartDemon, BaseRightHand]
+
+- type: entity
+  id: ADTLeftLegDemon
+  name: left demon leg
+  parent: [ADTPartDemon, BaseLeftLeg]
+
+- type: entity
+  id: ADTRightLegDemon
+  name: right demon leg
+  parent: [ADTPartDemon, BaseRightLeg]
+
+- type: entity
+  id: ADTLeftFootDemon
+  name: left demon foot
+  parent: [ADTPartDemon, BaseLeftFoot]
+
+- type: entity
+  id: ADTRightFootDemon
+  name: right demon foot
+  parent: [ADTPartDemon, BaseRightFoot]
