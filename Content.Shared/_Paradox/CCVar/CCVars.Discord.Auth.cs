@@ -14,7 +14,7 @@ public sealed partial class CCVars
     /// This secret key is used to encrypt UserIDs.
     /// </summary>
     public static readonly CVarDef<int> DiscordAuthEncryptionKey =
-        CVarDef.Create("discord.auth_encryption_key", 0, CVar.SERVERONLY | CVar.ARCHIVE);
+        CVarDef.Create("discord.auth_encryption_key", 0, CVar.SERVERONLY | CVar.ARCHIVE | CVar.CONFIDENTIAL);
 
     /// <summary>
     /// IP address of the Discord bot server.
@@ -26,5 +26,17 @@ public sealed partial class CCVars
     /// Port of the Discord bot server.
     /// </summary>
     public static readonly CVarDef<int> DiscordAuthBotPort =
-        CVarDef.Create("discord.auth_bot_port", 6767, CVar.SERVERONLY);
+        CVarDef.Create("discord.auth_bot_port", 9010, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Link to Discord server to show in the launcher.
+    /// </summary>
+    public static readonly CVarDef<string> InfoLinksAuthChannelDiscord =
+        CVarDef.Create("infolinks.auth_channel_discord", "https://discord.com/channels/1475918847759356117/1481280582368493761", CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    ///    Secret token to send to the bot when a user tries to authenticate. This is used to prevent unauthorized requests to the bot.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordAuthSendSecretTokenBot =
+        CVarDef.Create("discord.auth_send_secret_token_bot", "", CVar.SERVERONLY | CVar.ARCHIVE | CVar.CONFIDENTIAL);
 }

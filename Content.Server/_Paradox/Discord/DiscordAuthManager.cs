@@ -48,9 +48,14 @@ public sealed class DiscordAuthManager
         return 10000000 + (value % 90000000);
     }
 
-    public async Task SendAuthCodeToBot(Guid userId, int code)
+    public async Task SendAuthCodeToBot(Guid userId, int code, string secretToken)
     {
-        var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(new { userId, code }), Encoding.UTF8, "application/json");
+        var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(new {
+                userId,
+                code,
+                secretToken }),
+            Encoding.UTF8,
+            "application/json");
         await _httpClient.PostAsync($"http://{_botIp}:{_botPort}/auth", content);
     }
 }

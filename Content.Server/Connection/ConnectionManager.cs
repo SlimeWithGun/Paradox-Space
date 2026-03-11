@@ -369,7 +369,7 @@ namespace Content.Server.Connection
                     _sawmill.Warning($"Generated auth code for unauthorized user {userId}: {code}");
 
                     // Отправляем код боту (чтобы он мог проверить команду от игрока)
-                    await _discordAuthManager.SendAuthCodeToBot(userId, code);
+                    await _discordAuthManager.SendAuthCodeToBot(userId, code, _cfg.GetCVar(CCVars.DiscordAuthSendSecretTokenBot));
 
                     var denyMessage = $"DISCORD_AUTH_DENY|{code}|" +
                                       "Вы не авторизованы через Discord!\n\n" +
