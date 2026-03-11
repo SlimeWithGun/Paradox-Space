@@ -63,9 +63,9 @@ namespace Content.Client.MainMenu
         [Dependency] private readonly IClipboardManager _clipboard = default!;
         [Dependency] private readonly IUriOpener _uri = default!;
         private DefaultWindow? _discordAuthWindow;
-        // Paradox-End
+        // ...existing code...
 
-        private ISawmill _sawmill = default!;
+        ISawmill _sawmill = default!;
 
         private MainMenuControl _mainMenuControl = default!;
         private bool _isConnecting;
@@ -267,6 +267,8 @@ namespace Content.Client.MainMenu
 
         private void ShowDiscordAuthDenyWindow(int code, string message)
         {
+            _sawmill.Info($"DISCORD WINDOW CODE: {code}");
+
             if (_discordAuthWindow is { Disposed: false })
             {
                 _discordAuthWindow.OpenCentered();
