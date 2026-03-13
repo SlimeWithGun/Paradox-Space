@@ -56,6 +56,6 @@ public sealed class DiscordAuthManager
                 token }),
             Encoding.UTF8,
             "application/json");
-        await _httpClient.PostAsync($"http://{_botIp}:{_botPort}/auth", content);
+        await _httpClient.PostAsync($"http://{_botIp}:{_botPort}/auth", content); // Простите за хардкод ^_^, но я не хочу городить отдельный конфиг для одного эндпоинта бота
     }
 }

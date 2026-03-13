@@ -17,4 +17,3 @@ discord-auth-open-server-button = Открыть Discord сервер
 discord-auth-close-button = Закрыть
 discord-auth-window-title = Discord авторизация
 discord-auth-footer = [color=gray][font size=10]made by schridinger71[/font][/color]
-##discord-auth-footer = [color=gray]Сделано discord: schrodinger71[/color]

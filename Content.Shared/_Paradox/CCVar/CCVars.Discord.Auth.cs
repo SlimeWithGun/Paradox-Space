@@ -8,7 +8,7 @@ public sealed partial class CCVars
     /// Enables or disables authorization via Discord.
     /// </summary>
     public static readonly CVarDef<bool> DiscordAuthEnable =
-        CVarDef.Create("discord.auth_enable", true, CVar.SERVERONLY | CVar.ARCHIVE);
+        CVarDef.Create("discord.auth_enable", false, CVar.SERVERONLY | CVar.ARCHIVE);
 
     /// <summary>
     /// This secret key is used to encrypt UserIDs.
@@ -20,7 +20,7 @@ public sealed partial class CCVars
     /// IP address of the Discord bot server.
     /// </summary>
     public static readonly CVarDef<string> DiscordAuthBotIp =
-        CVarDef.Create("discord.auth_bot_ip", "5.129.210.180", CVar.SERVERONLY);
+        CVarDef.Create("discord.auth_bot_ip", "127.0.0.1", CVar.SERVERONLY);
 
     /// <summary>
     /// Port of the Discord bot server.

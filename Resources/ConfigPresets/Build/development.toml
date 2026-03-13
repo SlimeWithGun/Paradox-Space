@@ -63,9 +63,3 @@ ascension_requires_objectives = false
 random_characters = false
 random_species_weights = ""
 ssd_sleep_time = 3600
-
-[discord]
-auth_enable = true
-auth_encryption_key = 323423
-auth_bot_ip = "127.0.0.1"
-auth_bot_port = 9010
