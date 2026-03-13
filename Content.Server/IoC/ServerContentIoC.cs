@@ -199,6 +199,7 @@ using Content.Shared.Chat;
 using Content.Shared.Kitchen;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
+using Content.Server._Paradox.Discord;
 
 namespace Content.Server.IoC
 {
@@ -254,6 +255,9 @@ namespace Content.Server.IoC
             IoCManager.Register<ChatProtectionSystem>();
             IoCManager.Register<EmoteProtectionSystem>();
             // Orion-End
+            // Paradox-Start
+            IoCManager.Register<DiscordAuthManager>();
+            // Paradox-End
         }
     }
 }

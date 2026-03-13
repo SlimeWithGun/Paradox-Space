@@ -113,6 +113,11 @@ namespace Content.Server.Database
 
         void Shutdown();
 
+        #region Paradox Discord Auth
+        Task<string?> GetDiscordIdAsync(Guid userId);
+        Task<Guid?> GetUserIdByDiscordIdAsync(string discordId);
+        #endregion
+
         #region Preferences
         Task<PlayerPreferences> InitPrefsAsync(
             NetUserId userId,
@@ -629,6 +634,20 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.SaveGhostTypeAsync(userId, ghostProto));
         }
         // Orion-End
+
+        // Paradox-Start: Discord Auth
+        public Task<string?> GetDiscordIdAsync(Guid userId)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetDiscordIdAsync(userId));
+        }
+
+        public Task<Guid?> GetUserIdByDiscordIdAsync(string discordId)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetUserIdByDiscordIdAsync(discordId));
+        }
+        // Paradox-End
 
         public Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites)
         {

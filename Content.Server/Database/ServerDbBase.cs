@@ -2354,6 +2354,28 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
         #endregion
 
+        #region Paradox Discord Auth
+        public async Task<string?> GetDiscordIdAsync(Guid userId)
+        {
+            await using var db = await GetDb();
+
+            var discordPlayer = await db.DbContext.DiscordUser
+                .FirstOrDefaultAsync(p => p.UserId == userId);
+
+            return discordPlayer?.DiscordId;
+        }
+
+        public async Task<Guid?> GetUserIdByDiscordIdAsync(string discordId)
+        {
+            await using var db = await GetDb();
+
+            var discordPlayer = await db.DbContext.DiscordUser
+                .FirstOrDefaultAsync(p => p.DiscordId == discordId);
+
+            return discordPlayer?.UserId;
+        }
+        #endregion
+
         public abstract Task SendNotification(DatabaseNotification notification);
 
         // SQLite returns DateTime as Kind=Unspecified, Npgsql actually knows for sure it's Kind=Utc.
