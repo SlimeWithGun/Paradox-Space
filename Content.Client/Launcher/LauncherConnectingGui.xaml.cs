@@ -152,27 +152,24 @@ namespace Content.Client.Launcher
         }
 
         // Paradox-Start: Discord auth
-        private bool TryParseDiscordAuthDeny(string reason, out int code, out string message)
+        private bool TryParseDiscordAuthDeny(string reason, out string code, out string message)
         {
-            code = 0;
-            message = string.Empty;
+            code = "";
+            message = "";
 
             if (!reason.Contains("DISCORD_AUTH_DENY|"))
                 return false;
 
             var parts = reason.Split('|', 3);
-
             if (parts.Length < 3)
                 return false;
 
-            if (!int.TryParse(parts[1], out code))
-                return false;
-
+            code = parts[1]; // НЕ int
             message = parts[2];
             return true;
         }
 
-        private void ShowDiscordAuthDenyWindow(int code, string message)
+        private void ShowDiscordAuthDenyWindow(string code, string message)
         {
             Logger.Warning($"DISCORD WINDOW CODE: {code}");
 
@@ -222,7 +219,7 @@ namespace Content.Client.Launcher
 
             var codeLabel = new Label
             {
-                Text = $"{code}", // обычный текст, без окрашивания
+                Text = code, // обычный текст, без окрашивания
                 StyleClasses = { "LabelBig" }
             };
             codeRow.AddChild(codeLabel);
@@ -232,8 +229,8 @@ namespace Content.Client.Launcher
             var copyCodeBtn = new Button { Text = Loc.GetString("discord-auth-copy-code-button") };
             copyCodeBtn.OnPressed += _ =>
             {
-                _clipboard.SetText(code.ToString());
-                _userInterfaceManager.Popup(Loc.GetString("discord-auth-copy-code-popup"));
+                _clipboard.SetText(code);
+                // _userInterfaceManager.Popup(Loc.GetString("discord-auth-copy-code-popup"), clipboardButton: false);
             };
 
             var copyAllBtn = new Button { Text = Loc.GetString("discord-auth-copy-all-button") };
@@ -263,7 +260,8 @@ namespace Content.Client.Launcher
             _discordAuthWindow = new DefaultWindow
             {
                 Title = Loc.GetString("discord-auth-window-title"),
-                MinSize = new Vector2(450, 400)
+                MinSize = new Vector2(880, 600),
+                MaxSize = new Vector2(900, 620)
             };
 
             var footer = new RichTextLabel
