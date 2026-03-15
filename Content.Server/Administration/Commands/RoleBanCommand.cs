@@ -15,6 +15,10 @@ using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Roles;
+using Content.Server._Paradox.Discord;
+using Content.Server._Paradox.Discord.Bans;
+using Content.Server._Paradox.Discord.Bans.PayloadGenerators;
+using Content.Server.Database;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;
@@ -28,6 +32,8 @@ public sealed class RoleBanCommand : IConsoleCommand
     [Dependency] private readonly IBanManager _bans = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly IServerDbManager _dbManager = default!;
+    [Dependency] private readonly IDiscordBanInfoSender _discordBanInfoSender = default!;
 
     public string Command => "roleban";
     public string Description => Loc.GetString("cmd-roleban-desc");
@@ -104,8 +110,26 @@ public sealed class RoleBanCommand : IConsoleCommand
 
         var targetUid = located.UserId;
         var targetHWid = located.LastHWId;
+        //Start-_Paradox-Tweak: логи банов для диса
+        var lastRoleBan = await _dbManager.GetLastServerRoleBanAsync();
+        var newRoleBanId = lastRoleBan is not null ? lastRoleBan.Id + 1 : 1;
+        //End-_Paradox-Tweak
 
         _bans.CreateRoleBan(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, job, minutes, severity, reason, DateTimeOffset.UtcNow);
+        //Start-_Paradox-Tweak: логи банов для диса
+        var banInfo = new BanInfo
+        {
+            BanId = newRoleBanId is not null ? newRoleBanId.ToString()! : string.Empty,
+            Target = target,
+            Player = shell.Player,
+            Minutes = minutes,
+            Reason = reason,
+            Expires = DateTimeOffset.Now + TimeSpan.FromMinutes(minutes),
+            AdditionalInfo = new() { { "role", job } }
+        };
+
+        await _discordBanInfoSender.SendBanInfoAsync<RoleBanPayloadGenerator>(banInfo);
+        //End-_Paradox-Tweak
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)

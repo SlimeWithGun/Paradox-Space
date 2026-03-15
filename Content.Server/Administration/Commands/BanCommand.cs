@@ -18,6 +18,10 @@ using Content.Server.Administration.Managers;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
+using Content.Server._Paradox.Discord;
+using Content.Server._Paradox.Discord.Bans;
+using Content.Server._Paradox.Discord.Bans.PayloadGenerators;
+using Content.Server.Database;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
@@ -33,7 +37,8 @@ public sealed class BanCommand : LocalizedCommands
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
-
+    [Dependency] private readonly IDiscordBanInfoSender _discordBanInfoSender = default!;
+    [Dependency] private readonly IServerDbManager _dbManager = default!;
     public override string Command => "ban";
 
     public override async void Execute(IConsoleShell shell, string argStr, string[] args)
@@ -103,8 +108,25 @@ public sealed class BanCommand : LocalizedCommands
 
         var targetUid = located.UserId;
         var targetHWid = located.LastHWId;
+        //Start-_Paradox-Tweak: логи банов для диса
+        var lastServerBan = await _dbManager.GetLastServerBanAsync();
+        var newServerBanId = lastServerBan is not null ? lastServerBan.Id + 1 : 1;
+        //End-_Paradox-Tweak
 
         _bans.CreateServerBan(targetUid, target, player?.UserId, null, targetHWid, minutes, severity, reason);
+        //Start-_Paradox-Tweak: логи банов для диса
+        var banInfo = new BanInfo
+        {
+            BanId = newServerBanId.ToString()!,
+            Target = target,
+            Player = player,
+            Minutes = minutes,
+            Reason = reason,
+            Expires = DateTimeOffset.Now + TimeSpan.FromMinutes(minutes)
+        };
+
+        await _discordBanInfoSender.SendBanInfoAsync<ServerBanPayloadGenerator>(banInfo);
+        //End-_Paradox-Tweak
     }
 
     public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
