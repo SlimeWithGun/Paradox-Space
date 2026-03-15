@@ -70,7 +70,9 @@ chat-manager-entity-me-wrap-message = [italic]{ PROPER($entity) ->
     *[false] The {$entityName} {$message}[/italic]
      [true] {CAPITALIZE($entityName)} {$message}[/italic]
     }
-
+# Paradox tweak-start
+chat-manager-send-ooc-admin-wrap-message = OOC: [bold]{ $playerName }{ $patronTitle }:[/bold] { $message }
+# Paradox tweak-end
 chat-manager-entity-looc-wrap-message = [BubbleContent][bold][color=cyan]|LOOC|[/color][/bold] [color=lightblue]{ $entityName }: { $message }[/color][/BubbleContent]
 chat-manager-send-ooc-wrap-message = OOC: [bold]{$playerName}:[/bold] {$message}
 chat-manager-send-ooc-patron-wrap-message = OOC: [icon src="{$tierIcon}"/] [bold][color={$patronColor}]{$playerName}[/color]:[/bold] {$message}

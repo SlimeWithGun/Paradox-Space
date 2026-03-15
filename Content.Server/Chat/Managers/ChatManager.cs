@@ -446,6 +446,15 @@ internal sealed partial class ChatManager : IChatManager
             var prefs = _preferencesManager.GetPreferences(player.UserId);
             colorOverride = prefs.AdminOOCColor;
         }
+        var adminData = _adminManager.GetAdminData(player);
+        var isAdmin = _adminManager.HasAdminFlag(player, AdminFlags.Admin);
+        if (isAdmin)
+        {
+            wrappedMessage = Loc.GetString("chat-manager-send-ooc-admin-wrap-message",
+                ("patronTitle", $"\\[{adminData!.Title}\\] "),
+                ("playerName", player.Name),
+                ("message", FormattedMessage.EscapeText(message)));
+        }
         // RMC - Heavily modified for patreon.
         if (_netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) &&
             _linkAccount.GetPatron(player)?.Tier is { } tier)
