@@ -177,6 +177,7 @@ using Content.Server.Chat.Managers;
 using Content.Server.Connection;
 using Content.Server.Database;
 using Content.Server.Discord;
+using Content.Server._Paradox.Discord.Bans;
 using Content.Server.Discord.WebhookMessages;
 using Content.Server.EUI;
 using Content.Server.GhostKick;
@@ -257,6 +258,7 @@ namespace Content.Server.IoC
             // Orion-End
             // Paradox-Start
             IoCManager.Register<DiscordAuthManager>();
+            IoCManager.Register<IDiscordBanInfoSender, DiscordBanInfoSender>(); // логи банов для диса
             // Paradox-End
         }
     }
