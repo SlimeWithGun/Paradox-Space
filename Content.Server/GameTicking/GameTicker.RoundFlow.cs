@@ -583,14 +583,14 @@ namespace Content.Server.GameTicking
                 Log.Error($"Error while showing round end scoreboard: {e}");
             }
 
-            try
-            {
-                SendRoundEndDiscordMessage();
-            }
-            catch (Exception e)
-            {
-                Log.Error($"Error while sending round end Discord message: {e}");
-            }
+            // try // Paradox-Space-tweak
+            // {
+            //     SendRoundEndDiscordMessage();
+            // }
+            // catch (Exception e)
+            // {
+            //     Log.Error($"Error while sending round end Discord message: {e}");
+            // }
 
             ShowRoundEndScoreboard(text); // Paradox-Space-tweak
         }
