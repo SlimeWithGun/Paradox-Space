@@ -592,7 +592,7 @@ namespace Content.Server.GameTicking
             //     Log.Error($"Error while sending round end Discord message: {e}");
             // }
 
-            ShowRoundEndScoreboard(text); // Paradox-Space-tweak
+            // ShowRoundEndScoreboard(text); // Paradox-Space-tweak
         }
 
         public void ShowRoundEndScoreboard(string text = "")
