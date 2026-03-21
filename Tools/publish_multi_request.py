@@ -20,7 +20,7 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "http://83.222.20.3:8080/"
+ROBUST_CDN_URL = "http://144.31.109.124:8080/"
 FORK_ID = "paradox-fork"
 
 def main():
