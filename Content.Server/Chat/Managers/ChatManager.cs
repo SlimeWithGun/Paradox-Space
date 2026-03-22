@@ -446,6 +446,17 @@ internal sealed partial class ChatManager : IChatManager
             var prefs = _preferencesManager.GetPreferences(player.UserId);
             colorOverride = prefs.AdminOOCColor;
         }
+        // Start-Paradox: Admin Title in OOC
+        var adminData = _adminManager.GetAdminData(player);
+        var isAdmin = _adminManager.HasAdminFlag(player, AdminFlags.Admin);
+        if (isAdmin)
+        {
+            wrappedMessage = Loc.GetString("chat-manager-send-ooc-admin-wrap-message",
+                ("patronTitle", $"\\[{adminData!.Title}\\] "),
+                ("playerName", player.Name),
+                ("message", FormattedMessage.EscapeText(message)));
+        }
+        // End-Paradox
         // RMC - Heavily modified for patreon.
         if (_netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) &&
             _linkAccount.GetPatron(player)?.Tier is { } tier)
@@ -480,11 +491,19 @@ internal sealed partial class ChatManager : IChatManager
             _adminLogger.Add(LogType.Chat, LogImpact.Extreme, $"{player:Player} attempted to send admin message but was not admin");
             return;
         }
+        // Start-Paradox Schrodinger Tweak: Отсюда сможем получить инфу о префиксе админа
+        var senderAdmin = _adminManager.GetAdminData(player);
+        if (senderAdmin == null)
+            return;
+        var senderName = player.Name;  // Добавил переменную senderName, в ней содержиться player.Name и приставляем префикс к имени
+        if (!string.IsNullOrEmpty(senderAdmin.Title))
+            senderName += $"\\[{senderAdmin.Title}\\]";
+        // End-Paradox Tweak
 
         var clients = _adminManager.ActiveAdmins.Select(p => p.Channel);
         var wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-wrap-message",
                                         ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
-                                        ("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+                                        ("playerName", senderName), ("message", FormattedMessage.EscapeText(message))); // Paradox-Tweak
 
         foreach (var client in clients)
         {
