@@ -446,6 +446,7 @@ internal sealed partial class ChatManager : IChatManager
             var prefs = _preferencesManager.GetPreferences(player.UserId);
             colorOverride = prefs.AdminOOCColor;
         }
+        // Start-Paradox: Admin Title in OOC
         var adminData = _adminManager.GetAdminData(player);
         var isAdmin = _adminManager.HasAdminFlag(player, AdminFlags.Admin);
         if (isAdmin)
@@ -455,6 +456,7 @@ internal sealed partial class ChatManager : IChatManager
                 ("playerName", player.Name),
                 ("message", FormattedMessage.EscapeText(message)));
         }
+        // End-Paradox
         // RMC - Heavily modified for patreon.
         if (_netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) &&
             _linkAccount.GetPatron(player)?.Tier is { } tier)
