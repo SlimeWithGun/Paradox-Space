@@ -20,7 +20,6 @@ chat-language-Sign-name = Жесты
 chat-language-Marish-name = Мариш
 chat-language-Chittin-name = Хитин
 chat-language-Xeeplian-name = Ксиплианский
-chat-language-Arkane-name = Каукиттен
 
 # Дополнительные языки
 
