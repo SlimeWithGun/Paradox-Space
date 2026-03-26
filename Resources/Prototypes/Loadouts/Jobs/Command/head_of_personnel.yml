@@ -83,7 +83,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobHeadOfPersonnel
-      time: 72000 #20 hrs
+      time: 0 #20 hrs
 
 # Goobstation - For Ensembles
 - type: loadoutEffectGroup
@@ -93,7 +93,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobHeadOfPersonnel
-      time: 360000 # 100 hrs
+      time: 0 # 100 hrs
 
 # Professional HoP Time
 - type: loadoutEffectGroup
@@ -103,7 +103,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobHeadOfPersonnel
-      time: 54000 #15 hrs, special reward for HoP mains
+      time: 0 #15 hrs, special reward for HoP mains
 
 # Jumpsuit
 - type: loadout
@@ -171,3 +171,4 @@
   id: HoPWintercoat
   equipment:
     outerClothing: ClothingOuterWinterHoP
+

@@ -101,10 +101,10 @@
   playTimeTracker: JobSecurityCadet
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 36000 #10 hrs
+      time: 0 #10 hrs
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000 #10 hrs
+      time: 0 #10 hrs
       inverted: true # stop playing intern if you're good at security!
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
@@ -159,3 +159,4 @@
     neck: ClothingNeckScarfStripedRed
     belt: ClothingBeltSecurity
     gloves: ClothingHandsGlovesColorBlack
+

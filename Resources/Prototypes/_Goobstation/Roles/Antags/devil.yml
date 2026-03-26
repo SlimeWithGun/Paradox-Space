@@ -13,13 +13,13 @@
   guides: [ Devil ]
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 108000 # 30h
+    time: 0 # 30h
   - !type:DepartmentTimeRequirement
     department: Command
-    time: 18000 # 5 hours
+    time: 0 # 5 hours
   - !type:RoleTimeRequirement
     role: JobLawyer
-    time: 3600 # 1 Hour
+    time: 0 # 1 Hour
   - !type:SpeciesRequirement
     inverted: true
     species:
@@ -32,3 +32,4 @@
     - GuidebookCodexUmbra
     - PenDevil
     - ClothingEyesGlassesSunglasses
+

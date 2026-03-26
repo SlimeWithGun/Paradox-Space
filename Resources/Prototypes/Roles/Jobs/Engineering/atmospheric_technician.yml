@@ -67,7 +67,7 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Engineering
-    time: 9000 #2.5 hrs
+    time: 0 #2.5 hrs
   startingGear: AtmosphericTechnicianGear
   icon: "JobIconAtmosphericTechnician"
   supervisors: job-supervisors-ce
@@ -107,3 +107,4 @@
     neck: ClothingNeckScarfStripedLightBlue
     outerClothing: ClothingOuterSuitAtmosFire
     gloves: ClothingHandsGlovesColorYellow
+

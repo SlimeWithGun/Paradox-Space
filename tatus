@@ -1,0 +1,545 @@
+[1mdiff --git a/Resources/Prototypes/Roles/Jobs/Cargo/quartermaster.yml b/Resources/Prototypes/Roles/Jobs/Cargo/quartermaster.yml[m
+[1mindex 88193bce19..af8084ba25 100644[m
+[1m--- a/Resources/Prototypes/Roles/Jobs/Cargo/quartermaster.yml[m
+[1m+++ b/Resources/Prototypes/Roles/Jobs/Cargo/quartermaster.yml[m
+[36m@@ -129,66 +129,3 @@[m
+   name: job-name-qm[m
+   description: job-description-qm[m
+   playTimeTracker: JobQuartermaster[m
+[31m-  requirements:[m
+[31m-    - !type:RoleTimeRequirement[m
+[31m-      role: JobCargoTechnician[m
+[31m-      time: 18000 #5 hrs[m
+[31m-    - !type:RoleTimeRequirement[m
+[31m-      role: JobSalvageSpecialist[m
+[31m-      time: 9000 #2.5 hrs[m
+[31m-    - !type:DepartmentTimeRequirement[m
+[31m-      department: Cargo[m
+[31m-      time: 36000 #10 hours[m
+[31m-  weight: 10[m
+[31m-  startingGear: QuartermasterGear[m
+[31m-  icon: "JobIconQuarterMaster"[m
+[31m-  supervisors: job-supervisors-captain[m
+[31m-  canBeAntag: false[m
+[31m-  antagAdvantage: 75 # Goobstation[m
+[31m-#  guides: # goobstation | Orion-Edit: Removed because dont have this SOP[m
+[31m-#  - Cargo[m
+[31m-#  - QuartermasterSOP[m
+[31m-#  - CargoSOP[m
+[31m-#  - Command[m
+[31m-  goobcoins: 40 #Goob content[m
+[31m-  access:[m
+[31m-  - Cargo[m
+[31m-  - Salvage[m
+[31m-  - Quartermaster[m
+[31m-  - Maintenance[m
+[31m-  - External[m
+[31m-  - Command[m
+[31m-  - Brig[m
+[31m-  - Cryogenics[m
+[31m-  - External # goobstation[m
+[31m-  special:[m
+[31m-  - !type:AddImplantSpecial[m
+[31m-    implants: [ MindShieldImplant ][m
+[31m-  - !type:AddComponentSpecial[m
+[31m-    components:[m
+[31m-      - type: CommandStaff[m
+[31m-      - type: QuartermasterTraining[m
+[31m-[m
+[31m-- type: startingGear[m
+[31m-  id: QuartermasterGear[m
+[31m-  equipment:[m
+[31m-    id: QuartermasterPDA[m
+[31m-    ears: ClothingHeadsetAltCargo # Goobstation[m
+[31m-    belt: BoxFolderClipboard[m
+[31m-    pocket1: AppraisalTool[m
+[31m-  storage:[m
+[31m-    back:[m
+[31m-    - Flash[m
+[31m-    - TelescopicBaton # Goobstation[m
+[31m-[m
+[31m-- type: chameleonOutfit[m
+[31m-  id: QuartermasterChameleonOutfit[m
+[31m-  job: Quartermaster[m
+[31m-  hasMindShield: true[m
+[31m-  equipment:[m
+[31m-    head: ClothingHeadHatQMsoft[m
+[31m-    eyes: ClothingEyesGlassesSunglasses[m
+[31m-    mask: ClothingMaskBreath[m
+[31m-    outerClothing: ClothingOuterWinterQM[m
+[31m-    neck: ClothingNeckCloakQm[m
+[31m-    gloves: ClothingHandsKnuckleDustersQM[m
+[1mdiff --git a/Resources/Prototypes/Roles/Jobs/Cargo/salvage_specialist.yml b/Resources/Prototypes/Roles/Jobs/Cargo/salvage_specialist.yml[m
+[1mindex 910a5879bc..fd8f2cc147 100644[m
+[1m--- a/Resources/Prototypes/Roles/Jobs/Cargo/salvage_specialist.yml[m
+[1m+++ b/Resources/Prototypes/Roles/Jobs/Cargo/salvage_specialist.yml[m
+[36m@@ -73,38 +73,3 @@[m
+   name: job-name-salvagespec[m
+   description: job-description-salvagespec[m
+   playTimeTracker: JobSalvageSpecialist[m
+[31m-  requirements:[m
+[31m-    - !type:DepartmentTimeRequirement[m
+[31m-      department: Cargo[m
+[31m-      time: 9000 # 2.5 hrs[m
+[31m-  icon: "JobIconSalvageSpecialist" # Orion-Edit: Unique Salvager icon[m
+[31m-  startingGear: SalvageSpecialistGear[m
+[31m-#  guides: # goobstation | Orion-Edit: Removed because dont have this SOP[m
+[31m-#  - Salvage[m
+[31m-#  - Cargo[m
+[31m-  goobcoins: 20 #Goob content[m
+[31m-  supervisors: job-supervisors-qm[m
+[31m-  access:[m
+[31m-  - Cargo[m
+[31m-  - Salvage[m
+[31m-  - Maintenance[m
+[31m-  - External[m
+[31m-- type: startingGear[m
+[31m-  id: SalvageSpecialistGear[m
+[31m-  equipment:[m
+[31m-    id: SalvagePDA[m
+[31m-## Goob comment out - jumpsuit: ClothingUniformJumpsuitSalvageSpecialist[m
+[31m-    ears: ClothingHeadsetCargo[m
+[31m-  storage: # DeltaV: Add mining voucher[m
+[31m-    back:[m
+[31m-    - MiningVoucher[m
+[31m-- type: chameleonOutfit[m
+[31m-  id: SalvageSpecialistChameleonOutfit[m
+[31m-  job: SalvageSpecialist[m
+[31m-  equipment:[m
+[31m-    head: ClothingHeadHatCargosoft[m
+[31m-    eyes: ClothingEyesGlassesCheapSunglasses[m
+[31m-    mask: ClothingMaskGasExplorer[m
+[31m-    outerClothing: ClothingOuterWinterMiner[m
+[31m-    neck: ClothingNeckScarfStripedBrown[m
+[31m-    gloves: ClothingHandsGlovesColorBlack[m
+[1mdiff --git a/Resources/Prototypes/Roles/Jobs/Civilian/bartender.yml b/Resources/Prototypes/Roles/Jobs/Civilian/bartender.yml[m
+[1mindex 7b918b4141..c58b0b413c 100644[m
+[1m--- a/Resources/Prototypes/Roles/Jobs/Civilian/bartender.yml[m
+[1m+++ b/Resources/Prototypes/Roles/Jobs/Civilian/bartender.yml[m
+[36m@@ -72,41 +72,3 @@[m
+   name: job-name-bartender[m
+   description: job-description-bartender[m
+   playTimeTracker: JobBartender[m
+[31m-  requirements:[m
+[31m-    - !type:OverallPlaytimeRequirement[m
+[31m-      time: 1800 # 30 Minutes[m
+[31m-  startingGear: BartenderGear[m
+[31m-  icon: "JobIconBartender"[m
+[31m-  supervisors: job-supervisors-hop[m
+[31m-  guides: # goobstation[m
+[31m-#  - Bartender # Orion-Edit: Removed because dont have this SOP[m
+[31m-  - Drinks[m
+[31m-  goobcoins: 10 #Goob content[m
+[31m-  access:[m
+[31m-  - Service[m
+[31m-  - Maintenance[m
+[31m-  - Bar[m
+[31m-  extendedAccess:[m
+[31m-  - Kitchen[m
+[31m-  - Hydroponics[m
+[31m-[m
+[31m-- type: startingGear[m
+[31m-  id: BartenderGear[m
+[31m-  equipment:[m
+[31m-    shoes: ClothingShoesColorBlack[m
+[31m-    id: BartenderPDA[m
+[31m-    ears: ClothingHeadsetService[m
+[31m-  #storage:[m
+[31m-    #back:[m
+[31m-    #- Stuff[m
+[31m-[m
+[31m-- type: chameleonOutfit[m
+[31m-  id: BartenderChameleonOutfit[m
+[31m-  job: Bartender[m
+[31m-  equipment:[m
+[31m-    head: ClothingHeadHatTophat[m
+[31m-    eyes: ClothingEyesGlassesSunglasses[m
+[31m-    mask: ClothingMaskBreath[m
+[31m-    neck: ClothingNeckScarfStripedBlack[m
+[31m-    outerClothing: ClothingOuterArmorBasicSlim[m
+[31m-    gloves: ClothingHandsGlovesColorBlack[m
+[1mdiff --git a/Resources/Prototypes/Roles/Jobs/Civilian/chaplain.yml b/Resources/Prototypes/Roles/Jobs/Civilian/chaplain.yml[m
+[1mindex 840df04f6c..e9e6611614 100644[m
+[1m--- a/Resources/Prototypes/Roles/Jobs/Civilian/chaplain.yml[m
+[1m+++ b/Resources/Prototypes/Roles/Jobs/Civilian/chaplain.yml[m
+[36m@@ -68,46 +68,3 @@[m
+   name: job-name-chaplain[m
+   description: job-description-chaplain[m
+   playTimeTracker: JobChaplain[m
+[31m-  requirements:[m
+[31m-    - !type:OverallPlaytimeRequirement[m
+[31m-      time: 18000 # 15 hours[m
+[31m-  startingGear: ChaplainGear[m
+[31m-  icon: "JobIconChaplain"[m
+[31m-  supervisors: job-supervisors-hop[m
+[31m-  guides: [ Chaplain ] # goobstation[m
+[31m-  goobcoins: 25 #Goob content[m
+[31m-  access:[m
+[31m-  - Chapel[m
+[31m-  - Maintenance[m
+[31m-  special:[m
+[31m-  - !type:AddComponentSpecial[m
+[31m-    components:[m
+[31m-    - type: BibleUser #Lets them heal with bibles[m
+[31m-    - type: Condemned[m
+[31m-      soulOwnedNotDevil: true # This just means they won't suffer the effects of being condemned, while still not being able to sell their soul. - Goobstation[m
+[31m-    - type: CanEnchant #GoobStation[m
+[31m-    - type: CurseImmune # Immune to curses of wraith plaguebringer - Goobstation[m
+[31m-[m
+[31m-- type: startingGear[m
+[31m-  id: ChaplainGear[m
+[31m-  equipment:[m
+[31m-    shoes: ClothingShoesColorBlack[m
+[31m-    id: ChaplainPDA[m
+[31m-    ears: ClothingHeadsetService[m
+[31m-  storage:[m
+[31m-    back:[m
+[31m-    - ChaplainUndeterminedBible[m
+[31m-    - RubberStampChaplain[m
+[31m-    - Nullrod[m
+[31m-    - ArmamentsBeacon # Goobstation[m
+[31m-[m
+[31m-- type: chameleonOutfit[m
+[31m-  id: ChaplainChameleonOutfit[m
+[31m-  job: Chaplain[m
+[31m-  equipment:[m
+[31m-    head: ClothingHeadHatPlaguedoctor[m
+[31m-    eyes: ClothingEyesGlasses[m
+[31m-    mask: ClothingMaskPlague[m
+[31m-    neck: ClothingNeckStoleChaplain[m
+[31m-    outerClothing: ClothingOuterPlagueSuit[m
+[31m-    gloves: ClothingHandsGlovesColorBlack[m
+[1mdiff --git a/Resources/Prototypes/Roles/Jobs/Civilian/chef.yml b/Resources/Prototypes/Roles/Jobs/Civilian/chef.yml[m
+[1mindex 44367009ae..27fd249990 100644[m
+[1m--- a/Resources/Prototypes/Roles/Jobs/Civilian/chef.yml[m
+[1m+++ b/Resources/Prototypes/Roles/Jobs/Civilian/chef.yml[m
+[36m@@ -82,52 +82,3 @@[m
+   name: job-name-chef[m
+   description: job-description-chef[m
+   playTimeTracker: JobChef[m
+[31m-  requirements:[m
+[31m-    - !type:OverallPlaytimeRequirement[m
+[31m-      time: 1800 # 30 Minutes[m
+[31m-  startingGear: ChefGear[m
+[31m-  icon: "JobIconChef"[m
+[31m-  supervisors: job-supervisors-hop[m
+[31m-  guides: # goobstation[m
+[31m-#  - Chef # Orion-Edit: Removed because dont have this SOP[m
+[31m-  - FoodRecipes[m
+[31m-  - CQC[m
+[31m-  goobcoins: 15 #Goob content[m
+[31m-  access:[m
+[31m-  - Service[m
+[31m-  - Maintenance[m
+[31m-  - Kitchen[m
+[31m-  extendedAccess:[m
+[31m-  - Hydroponics[m
+[31m-  - Bar[m
+[31m-  special: # Goobstation - Martial Arts[m
+[31m-  - !type:AddComponentSpecial[m
+[31m-    components:[m
+[31m-      - type: GrantCqc[m
+[31m-        startingStage: Hard[m
+[31m-        isBlocked: true[m
+[31m-  - !type:AddImplantSpecial # Chefs speak space italian[m
+[31m-    implants: [ SpaceItalianTranslatorImplant ][m
+[31m-[m
+[31m-- type: startingGear[m
+[31m-  id: ChefGear[m
+[31m-  equipment:[m
+[31m-    shoes: ClothingShoesColorBlack[m
+[31m-    id: ChefPDA[m
+[31m-    ears: ClothingHeadsetService[m
+[31m-    belt: ClothingBeltChefFilled[m
+[31m-  #storage:[m
+[31m-    #back:[m
+[31m-    #- Stuff[m
+[31m-[m
+[31m-- type: chameleonOutfit[m
+[31m-  id: ChefChameleonOutfit[m
+[31m-  job: Chef[m
+[31m-  equipment:[m
+[31m-    head: ClothingHeadHatChef[m
+[31m-    eyes: ClothingEyesGlassesCheapSunglasses[m
+[31m-    mask: ClothingMaskItalianMoustache[m
+[31m-    neck: ClothingNeckScarfStripedBrown[m
+[31m-    outerClothing: ClothingOuterJacketChef[m
+[31m-    gloves: ClothingHandsGlovesColorWhite[m
+[31m-    shoes: ClothingShoesChef[m
+[1mdiff --git a/Resources/Prototypes/Roles/Jobs/Civilian/lawyer.yml b/Resources/Prototypes/Roles/Jobs/Civilian/lawyer.yml[m
+[1mindex bccb7b5c19..f6b427348a 100644[m
+[1m--- a/Resources/Prototypes/Roles/Jobs/Civilian/lawyer.yml[m
+[1m+++ b/Resources/Prototypes/Roles/Jobs/Civilian/lawyer.yml[m
+[36m@@ -70,47 +70,3 @@[m
+   name: job-name-lawyer[m
+   description: job-description-lawyer[m
+   playTimeTracker: JobLawyer[m
+[31m-  requirements:[m
+[31m-    - !type:OverallPlaytimeRequirement[m
+[31m-      time: 9000 # 2.5 hrs[m
+[31m-  startingGear: LawyerGear[m
+[31m-  icon: "JobIconLawyer"[m
+[31m-  supervisors: job-supervisors-hop[m
+[31m-  guides: # goobstation[m
+[31m-  - SpaceLaw[m
+[31m-#  - LegalSOP # Orion-Edit: Removed because dont have this SOP[m
+[31m-  goobcoins: 10 #Goob content[m
+[31m-  access:[m
+[31m-  - Service[m
+[31m-  - Lawyer[m
+[31m-  - Brig[m
+[31m-  - Maintenance[m
+[31m-  special: # Goobstation - Everyone knows lawyers are soulless.[m
+[31m-  - !type:AddComponentSpecial[m
+[31m-    components:[m
+[31m-    - type: Condemned[m
+[31m-      soulOwnedNotDevil: true[m
+[31m-[m
+[31m-- type: startingGear[m
+[31m-  id: LawyerGear[m
+[31m-  equipment:[m
+[31m-    shoes: ClothingShoesBootsLaceup[m
+[31m-    id: LawyerPDA[m
+[31m-    ears: ClothingHeadsetSecurity[m
+[31m-  inhand:[m
+[31m-    - BriefcaseBrownFilled[m
+[31m-  storage:[m
+[31m-    back:[m
+[31m-    - RubberStampLawyer[m
+[31m-    - BookSpaceLaw[m
+[31m-[m
+[31m-- type: chameleonOutfit[m
+[31m-  id: LawyerChameleonOutfit[m
+[31m-  job: Lawyer[m
+[31m-  equipment:[m
+[31m-    head: ClothingHeadHatBowlerHat[m
+[31m-    eyes: ClothingEyesGlassesCheapSunglasses[m
+[31m-    mask: ClothingMaskBreath[m
+[31m-    neck: ClothingNeckLawyerbadge[m
+[31m-    outerClothing: ClothingOuterWinterColorBlack[m
+[31m-    gloves: ClothingHandsGlovesColorBlack[m
+[1mdiff --git a/Resources/Prototypes/Roles/Jobs/Command/captain.yml b/Resources/Prototypes/Roles/Jobs/Command/captain.yml[m
+[1mindex 124c117130..14cde93cb6 100644[m
+[1m--- a/Resources/Prototypes/Roles/Jobs/Command/captain.yml[m
+[1m+++ b/Resources/Prototypes/Roles/Jobs/Command/captain.yml[m
+[36m@@ -138,75 +138,3 @@[m
+   name: job-name-captain[m
+   description: job-description-captain[m
+   playTimeTracker: JobCaptain[m
+[31m-  requirements:[m
+[31m-    - !type:DepartmentTimeRequirement[m
+[31m-      department: Engineering[m
+[31m-      time: 14400 # 4 hours[m
+[31m-    - !type:DepartmentTimeRequirement[m
+[31m-      department: Medical[m
+[31m-      time: 14400 # 4 hours[m
+[31m-    - !type:DepartmentTimeRequirement[m
+[31m-      department: Science[m
+[31m-      time: 14400 # 4 hours[m
+[31m-    - !type:DepartmentTimeRequirement[m
+[31m-      department: Security[m
+[31m-      time: 21600 # 6 hours[m
+[31m-    - !type:DepartmentTimeRequirement[m
+[31m-      department: Command[m
+[31m-      time: 28000 # 8 hours[m
+[31m-      #any MRP using our code might eventually want to use it[m
+[31m-    # - !type:SaturationRequirement # MisandryBox - no neon hair on captain[m
+[31m-    #   hairColorSaturation: 0.30[m
+[31m-#  guides: # goobstation | Orion-Edit: Removed because dont have this SOP[m
+[31m-#  - Command[m
+[31m-#  - Succession[m
+[31m-#  - StandardProceduresSOP[m
+[31m-#  - CaptainSOP[m
+[31m-  goobcoins: 50 #Goob content[m
+[31m-  weight: 20[m
+[31m-  startingGear: CaptainGear[m
+[31m-  icon: "JobIconCaptain"[m
+[31m-  joinNotifyCrew: true[m
+[31m-  supervisors: job-supervisors-centcom[m
+[31m-  canBeAntag: false[m
+[31m-  accessGroups:[m
+[31m-  - AllAccess[m
+[31m-  special:[m
+[31m-  - !type:AddImplantSpecial[m
+[31m-    implants: [ MindShieldImplant ][m
+[31m-  - !type:AddComponentSpecial[m
+[31m-    components:[m
+[31m-      - type: CommandStaff[m
+[31m-      - type: Condemned # Goobstation - Nanotrasen owns your soul pal.[m
+[31m-        soulOwnedNotDevil: true[m
+[31m-      # Orion-Start[m
+[31m-      - type: AdditionalLanguage[m
+[31m-        speaks:[m
+[31m-        - CorporateCodespeak[m
+[31m-        understands:[m
+[31m-        - CorporateCodespeak[m
+[31m-      # Orion-End[m
+[31m-[m
+[31m-- type: startingGear[m
+[31m-  id: CaptainGear[m
+[31m-  equipment:[m
+[31m-    shoes: ClothingShoesBootsLaceup[m
+[31m-    eyes: ClothingEyesGlassesCommand[m
+[31m-    #gloves: ClothingHandsGlovesCaptain - Goobstation, moved to loadouts[m
+[31m-    id: CaptainPDA[m
+[31m-    ears: ClothingHeadsetAltCommand[m
+[31m-  storage:[m
+[31m-    back:[m
+[31m-    - Flash[m
+[31m-    - TelescopicBaton # Goobstation[m
+[31m-    # - StationCharter[m
+[31m-[m
+[31m-- type: chameleonOutfit[m
+[31m-  id: CaptainChameleonOutfit[m
+[31m-  job: Captain[m
+[31m-  hasMindShield: true[m
+[31m-  equipment:[m
+[31m-    head: ClothingHeadHatCapcap[m
+[31m-    eyes: ClothingEyesGlassesCommand[m
+[31m-    mask: ClothingMaskGasCaptain[m
+[31m-    neck: ClothingNeckCloakCap[m
+[1mdiff --git a/Resources/Prototypes/Roles/Jobs/Command/head_of_personnel.yml b/Resources/Prototypes/Roles/Jobs/Command/head_of_personnel.yml[m
+[1mindex 7d97d1bf33..4e39e4bae0 100644[m
+[1m--- a/Resources/Prototypes/Roles/Jobs/Command/head_of_personnel.yml[m
+[1m+++ b/Resources/Prototypes/Roles/Jobs/Command/head_of_personnel.yml[m
+[36m@@ -136,95 +136,3 @@[m
+   name: job-name-hop[m
+   description: job-description-hop[m
+   playTimeTracker: JobHeadOfPersonnel[m
+[31m-  requirements:[m
+[31m-    - !type:DepartmentTimeRequirement[m
+[31m-      department: Engineering[m
+[31m-      time: 14400 # 4 hours[m
+[31m-    - !type:DepartmentTimeRequirement[m
+[31m-      department: Medical[m
+[31m-      time: 14400 # 4 hours[m
+[31m-    - !type:DepartmentTimeRequirement[m
+[31m-      department: Science[m
+[31m-      time: 14400 # 4 hours[m
+[31m-    - !type:DepartmentTimeRequirement[m
+[31m-      department: Security[m
+[31m-      time: 14400 # 4 hours[m
+[31m-    - !type:DepartmentTimeRequirement[m
+[31m-      department: Command[m
+[31m-      time: 14400 # 4 hours[m
+[31m-    - !type:SpeciesRequirement # Goob - None Felinid[m
+[31m-      inverted: true[m
+[31m-      species:[m
+[31m-      - Felinid[m
+[31m-#  guides: # goobstation | Orion-Edit: Removed because dont have this SOP[m
+[31m-#  - Command[m
+[31m-#  - Succession[m
+[31m-#  - StandardProceduresSOP[m
+[31m-#  - HeadOfPersonnelSOP[m
+[31m-#  - Writing[m
+[31m-  goobcoins: 40 #Goob content[m
+[31m-  weight: 20[m
+[31m-  startingGear: HoPGear[m
+[31m-  icon: "JobIconHeadOfPersonnel"[m
+[31m-  supervisors: job-supervisors-captain[m
+[31m-  canBeAntag: false[m
+[31m-  access:[m
+[31m-  - Command[m
+[31m-  - HeadOfPersonnel[m
+[31m-  - Bar[m
+[31m-  - Service[m
+[31m-  - Maintenance[m
+[31m-  - Janitor[m
+[31m-  - Theatre[m
+[31m-  - Kitchen[m
+[31m-  - Chapel[m
+[31m-  - Hydroponics[m
+[31m-  - External[m
+[31m-  - Cryogenics[m
+[31m-  # I mean they'll give themselves the rest of the access levels *anyways*.[m
+[31m-  # As of 15/03/23 they can't do that so here's MOST of the rest of the access levels.[m
+[31m-  # Head level access that isn't their own was deliberately left out, get AA from the captain instead.[m
+[31m-  - Chemistry[m
+[31m-  - Engineering[m
+[31m-  - Research[m
+[31m-  - Detective[m
+[31m-  - Salvage[m
+[31m-  - Security[m
+[31m-  - Brig[m
+[31m-  - Lawyer[m
+[31m-  - Cargo[m
+[31m-  - Atmospherics[m
+[31m-  - Medical[m
+[31m-  - Journalism # Goob[m
+[31m-  - Robotics # Goob[m
+[31m-  special:[m
+[31m-  - !type:AddImplantSpecial[m
+[31m-    implants: [ MindShieldImplant ][m
+[31m-  - !type:AddComponentSpecial[m
+[31m-    components:[m
+[31m-      - type: CommandStaff[m
+[31m-[m
+[31m-- type: startingGear[m
+[31m-  id: HoPGear[m
+[31m-  equipment:[m
+[31m-    shoes: ClothingShoesColorBrown[m
+[31m-    id: HoPPDA[m
+[31m-    #gloves: ClothingHandsGlovesHop[m
+[31m-    ears: ClothingHeadsetAltCommand[m
+[31m-    belt: BoxFolderClipboard[m
+[31m-    eyes: ClothingEyesHudCommand[m
+[31m-  storage:[m
+[31m-    back:[m
+[31m-    - Flash[m
+[31m-    - TelescopicBaton # Goobstation[m
+[31m-[m
+[31m-- type: chameleonOutfit[m
+[31m-  id: HeadOfPersonnelChameleonOutfit[m
+[31m-  job: HeadOfPersonnel[m
+[31m-  hasMindShield: true[m
+[31m-  equipment:[m
+[31m-    head: ClothingHeadHatHopcap[m
+[31m-    eyes: ClothingEyesHudCommand[m
+[31m-    mask: ClothingMaskNeckGaiterRed[m
+[31m-    neck: ClothingNeckCloakHop[m
+[31m-    outerClothing: ClothingOuterWinterHoP[m
+[1mdiff --git a/Resources/Prototypes/Roles/Jobs/Engineering/chief_engineer.yml b/Resources/Prototypes/Roles/Jobs/Engineering/chief_engineer.yml[m
+[1mindex 40c9ec401d..56d31ddf65 100644[m
+[1m--- a/Resources/Prototypes/Roles/Jobs/Engineering/chief_engineer.yml[m
+[1m+++ b/Resources/Prototypes/Roles/Jobs/Engineering/chief_engineer.yml[m
+[36m@@ -133,66 +133,3 @@[m
+   name: job-name-ce[m
+   description: job-description-ce[m
+   playTimeTracker: JobChiefEngineer[m
+[31m-  requirements:[m
+[31m-    - !type:RoleTimeRequirement[m
+[31m-      role: JobAtmosphericTechnician[m
+[31m-      time: 18000 #5 hrs[m
+[31m-    - !type:RoleTimeRequirement[m
+[31m-      role: JobStationEngineer[m
+[31m-      time: 21600 #6 hrs[m
+[31m-    - !type:DepartmentTimeRequirement[m
+[31m-      department: Engineering[m
+[31m-      time: 36000 #10 hrs[m
+[31m-  weight: 10[m
+[31m-  startingGear: ChiefEngineerGear[m
+[31m-  icon: "JobIconChiefEngineer"[m
+[31m-  supervisors: job-supervisors-captain[m
+[31m-  canBeAntag: false[m
+[31m-  antagAdvantage: 75 # Goobstation[m
+[31m-#  guides: # goobstation | Orion-Edit: Removed because dont have this SOP[m
+[31m-#  - Engineering[m
+[31m-#  - ChiefEngineerSOP[m
+[31m-#  - EngineeringSOP[m
+[31m-#  - Command[m
+[31m-#  - EmergenciesSOP[m
+[31m-  goobcoins: 40 #Goob content[m
+[31m-  access:[m
+[31m-  - Maintenance[m
+[31m-  - Engineering[m
+[31m-  - Command[m
+[31m-  - External[m
+[31m-  - ChiefEngineer[m
+[31m-  - Atmospherics[m
+[31m-  - Brig[m
+[31m-  - Cryogenics[m
+[31m-  special:[m
+[31m-  - !type:AddImplantSpecial[m
+[31m-    implants: [ MindShieldImplant ][m
+[31m-  - !type:AddComponentSpecial[m
+[31m-    co

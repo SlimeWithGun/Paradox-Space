@@ -123,7 +123,7 @@
     requirements: # Goobstation - ghost roles requirements
     - !type:RoleTimeRequirement
       role: JobBorg
-      time: 3600 #1 hour
+      time: 0 #1 hour
   - type: GhostTakeoverAvailable
 
 # Mining
@@ -454,3 +454,4 @@
   components:
   - type: BorgSwitchableSubtype
     borgSubtype: service_rover
+

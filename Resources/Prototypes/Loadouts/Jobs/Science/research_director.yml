@@ -83,7 +83,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobResearchDirector
-      time: 72000 #20 hrs
+      time: 0 #20 hrs
 
 # Goobstation - For Ensembles
 - type: loadoutEffectGroup
@@ -93,7 +93,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobResearchDirector
-      time: 360000 # 100 hrs
+      time: 0 # 100 hrs
 
 # Head
 - type: loadout
@@ -168,3 +168,4 @@
   id: ResearchDirectorWintercoat
   equipment:
     outerClothing: ClothingOuterWinterRD
+

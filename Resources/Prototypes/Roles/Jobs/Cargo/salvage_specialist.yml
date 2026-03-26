@@ -76,7 +76,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Cargo
-      time: 9000 # 2.5 hrs
+      time: 0 # 2.5 hrs
   icon: "JobIconSalvageSpecialist" # Orion-Edit: Unique Salvager icon
   startingGear: SalvageSpecialistGear
 #  guides: # goobstation | Orion-Edit: Removed because dont have this SOP
@@ -108,3 +108,4 @@
     outerClothing: ClothingOuterWinterMiner
     neck: ClothingNeckScarfStripedBrown
     gloves: ClothingHandsGlovesColorBlack
+

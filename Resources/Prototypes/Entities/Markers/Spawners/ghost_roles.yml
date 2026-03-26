@@ -115,7 +115,7 @@
       settings: default
     requirements: # Goobstation - ghost roles requirements
     - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
+      time: 0 #5 hours
   - type: GhostRoleMobSpawner
     prototype: MobRatKing
   - type: Sprite
@@ -207,7 +207,7 @@
     requirements: # Goobstation - ghost roles requirements
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 18000 #5 hours
+      time: 0 #5 hours
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -264,7 +264,7 @@
     - MindRoleGhostRoleTeamAntagonist
     requirements: # Goobstation - ghost roles requirements
     - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
+      time: 0 #5 hours
   - type: Sprite
     layers:
     - state: green
@@ -286,7 +286,7 @@
       settings: default
     requirements: # Goobstation - ghost roles requirements
     - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
+      time: 0 #5 hours
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -330,7 +330,7 @@
     requirements: # Goobstation - ghost roles requirements
     - !type:RoleTimeRequirement
       role: JobBorg
-      time: 3600 #1 hour
+      time: 0 #1 hour
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -350,3 +350,4 @@
     - state: green
     - sprite: _Goobstation/Mobs/Xenos/king.rsi
       state: rogue
+

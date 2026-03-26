@@ -252,10 +252,10 @@
     rules: ghost-role-information-inteq-SIZO-rules
     requirements:
     - !type:OverallPlaytimeRequirement
-      time: 76000
+      time: 0
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 18000
+      time: 0
   - type: CloningAppearance
     startingGear: InteQVanguardLeaderSizoGear
     components:
@@ -290,10 +290,10 @@
     rules: ghost-role-information-inteq-SIZO-rules
     requirements:
     - !type:OverallPlaytimeRequirement
-      time: 36000
+      time: 0
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000
+      time: 0
   - type: CloningAppearance
     startingGear: InteQVanguardOperativeSizoGear
     components:
@@ -328,10 +328,10 @@
     rules: ghost-role-information-inteq-SIZO-rules
     requirements:
     - !type:OverallPlaytimeRequirement
-      time: 36000
+      time: 0
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000
+      time: 0
   - type: CloningAppearance
     startingGear: InteQVanguardSoldierSizoGear
     components:
@@ -366,10 +366,10 @@
     rules: ghost-role-information-inteq-SIZO-rules
     requirements:
     - !type:OverallPlaytimeRequirement
-      time: 36000
+      time: 0
     - !type:RoleTimeRequirement
       role: JobChemist
-      time: 18000
+      time: 0
   - type: CloningAppearance
     startingGear: InteQVanguardMedicSizoGear
     components:
@@ -389,3 +389,4 @@
         - InteQ
     - type: Recruited
       organization: organization-inteq
+

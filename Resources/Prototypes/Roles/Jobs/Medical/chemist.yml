@@ -68,7 +68,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 18000 #5 hrs
+      time: 0 #5 hrs
   startingGear: ChemistGear
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo
@@ -108,3 +108,4 @@
     neck: ClothingNeckStethoscope
     outerClothing: ClothingOuterCoatLabChem
     gloves: ClothingHandsGlovesLatex
+

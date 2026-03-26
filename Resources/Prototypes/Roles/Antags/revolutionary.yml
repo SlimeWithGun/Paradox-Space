@@ -20,7 +20,7 @@
   requirements:
   - !type:DepartmentTimeRequirement # was  - !type:OverallPlaytimeRequirement, Goob change
       department: Command 
-      time: 36000 # 10h
+      time: 0 # 10h
   guides: [ Revolutionaries ]
 
 - type: antag
@@ -38,3 +38,4 @@
     - RevolutionaryManifesto # Einstein Engines - Revolutionary Manifesto
     - EncryptionKeySyndie # Goobstation
     - RevsFastDrawImplanter # Goobstation
+

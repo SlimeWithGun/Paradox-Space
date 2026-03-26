@@ -91,7 +91,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 9000 #2.5 hrs
+      time: 0 #2.5 hrs
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
@@ -137,3 +137,4 @@
     mask: ClothingMaskGasSecurity
     neck: Dinkystar
     gloves: ClothingHandsGlovesColorBlack
+

@@ -89,12 +89,12 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobWarden
-      time: 21600 #6 hrs
+      time: 0 #6 hrs
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
       department: Security
-      time: 216000 # 60 hrs
+      time: 0 # 60 hrs
 
 #Security Star
 - type: loadoutEffectGroup
@@ -104,7 +104,7 @@
       requirement:
         !type:DepartmentTimeRequirement
         department: Security
-        time: 360000 #100 hrs
+        time: 0 #100 hrs
 
 # Head
 - type: loadout
@@ -266,3 +266,4 @@
   storage:
     back:
     - Dinkystar
+

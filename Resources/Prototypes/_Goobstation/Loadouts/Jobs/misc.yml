@@ -16,12 +16,12 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobResearchDirector
-      time: 36000 # 10 hrs
+      time: 0 # 10 hrs
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
       role: JobBorg
-      time: 36000 # 10 hrs
+      time: 0 # 10 hrs
 
 - type: loadout
   id: Bodycam
@@ -57,7 +57,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobStationAi
-      time: 180000 # 50 hrs
+      time: 0 # 50 hrs
   storage:
     back:
     - GoldenPersonalAI
@@ -98,3 +98,4 @@
   storage:
     back:
     - MobCarpGoldfish
+

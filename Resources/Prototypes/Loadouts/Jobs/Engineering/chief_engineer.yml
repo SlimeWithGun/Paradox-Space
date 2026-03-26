@@ -83,7 +83,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChiefEngineer
-      time: 72000 #20 hrs
+      time: 0 #20 hrs
 
 # Goobstation - For Ensembles
 - type: loadoutEffectGroup
@@ -93,7 +93,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChiefEngineer
-      time: 360000 # 100 hrs
+      time: 0 # 100 hrs
 
 # Jumpsuit
 - type: loadout
@@ -177,3 +177,4 @@
   id: BrownShoes
   equipment:
     shoes: ClothingShoesColorBrown
+

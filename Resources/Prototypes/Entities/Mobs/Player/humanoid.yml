@@ -224,10 +224,10 @@
       requirements:
       - !type:DepartmentTimeRequirement
         department: Security
-        time: 48000 # Goobstation
+        time: 0 # Goobstation
       - !type:DepartmentTimeRequirement
         department: Command
-        time: 18000 # Goobstation
+        time: 0 # Goobstation
     - type: Loadout
       prototypes: [ DeathSquadGear ]
       roleLoadout: [ RoleSurvivalEVA ]
@@ -270,10 +270,10 @@
       requirements:
       - !type:DepartmentTimeRequirement
         department: Security
-        time: 36000 # ten hours
+        time: 0 # ten hours
       - !type:DepartmentTimeRequirement
         department: Command
-        time: 18000 # five hours
+        time: 0 # five hours
     - type: Loadout
       prototypes: [ ERTLeaderGear ]
       roleLoadout: [ RoleSurvivalExtended ]
@@ -478,10 +478,10 @@
       requirements:
       - !type:DepartmentTimeRequirement
         department: Engineering
-        time: 36000 # ten hours
+        time: 0 # ten hours
       - !type:DepartmentTimeRequirement
         department: Security
-        time: 18000 # five hours
+        time: 0 # five hours
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirst
@@ -678,10 +678,10 @@
       requirements:
       - !type:DepartmentTimeRequirement
         department: Medical
-        time: 36000 # ten hours
+        time: 0 # ten hours
       - !type:DepartmentTimeRequirement
         department: Security
-        time: 18000 # five hours
+        time: 0 # five hours
       job: ERTMedical
     - type: Loadout
       prototypes: [ ERTMedicalGearEVA ]
@@ -720,10 +720,10 @@
       requirements:
       - !type:DepartmentTimeRequirement
         department: Security
-        time: 36000 # ten hours
+        time: 0 # ten hours
       - !type:DepartmentTimeRequirement
         department: Command
-        time: 18000 # five hours
+        time: 0 # five hours
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirst
@@ -828,3 +828,4 @@
       raffle:
         settings: default
     - type: Cluwne
+

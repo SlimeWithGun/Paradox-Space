@@ -80,7 +80,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 9000 #2.5 hrs
+      time: 0 #2.5 hrs
   startingGear: DoctorGear
   icon: "JobIconMedicalDoctor"
   supervisors: job-supervisors-cmo
@@ -124,3 +124,4 @@
     neck: ClothingNeckStethoscope
     outerClothing: ClothingOuterCoatLab
     gloves: ClothingHandsGlovesLatex
+

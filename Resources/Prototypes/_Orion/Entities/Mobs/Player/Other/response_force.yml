@@ -55,10 +55,10 @@
     requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000 # ten hours
+      time: 0 # ten hours
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 18000 # five hours
+      time: 0 # five hours
   - type: RandomMetadata
     nameSegments:
     - NamesMilitaryFirstLeader
@@ -78,7 +78,7 @@
     requirements:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 5000
+      time: 0
 
 - type: randomHumanoidSettings
   parent: [ BaseNanoTrasenERT, BaseResponseForce ]
@@ -94,10 +94,10 @@
     requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 36000 # ten hours
+      time: 0 # ten hours
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 18000 # five hours
+      time: 0 # five hours
 
 - type: randomHumanoidSettings
   parent: [ BaseNanoTrasenERT, BaseResponseForce ]
@@ -113,7 +113,7 @@
     requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 18000 # five hours
+      time: 0 # five hours
 
 - type: randomHumanoidSettings
   parent: [ BaseNanoTrasenERT, BaseResponseForce ]
@@ -129,7 +129,7 @@
     requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 18000 # five hours
+      time: 0 # five hours
 
 # Base InteQ ERT
 - type: randomHumanoidSettings
@@ -945,3 +945,4 @@
     state: logo
   - type: RandomHumanoidSpawner
     settings: AssistantERT
+

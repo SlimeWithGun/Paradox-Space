@@ -139,10 +139,10 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobScientist
-    time: 21600 #6 hrs
+    time: 0 #6 hrs
   - !type:DepartmentTimeRequirement
     department: Science
-    time: 36000 #10 hrs
+    time: 0 #10 hrs
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
@@ -191,3 +191,4 @@
     neck: ClothingNeckCloakRd
     outerClothing: ClothingOuterCoatRD
     gloves: ClothingHandsGlovesColorPurple
+

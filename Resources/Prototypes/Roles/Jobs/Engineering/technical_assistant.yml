@@ -64,10 +64,10 @@
   playTimeTracker: JobTechnicalAssistant
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 7200 # 2 hrs
+      time: 0 # 2 hrs
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 36000 #10 hrs
+      time: 0 #10 hrs
       inverted: true # stop playing intern if you're good at engineering!
   startingGear: TechnicalAssistantGear
   icon: "JobIconTechnicalAssistant"
@@ -108,3 +108,4 @@
     neck: ClothingNeckScarfStripedOrange
     outerClothing: ClothingOuterVestHazard
     gloves: ClothingHandsGlovesColorYellow
+

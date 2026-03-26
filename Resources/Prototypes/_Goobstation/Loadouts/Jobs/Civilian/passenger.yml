@@ -6,7 +6,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobPassenger
-      time: 288000 # 80 hrs
+      time: 0 # 80 hrs
 
 # Quarterzip
 - type: loadout
@@ -16,3 +16,4 @@
 #    proto: SophisticatedTider
   equipment:
     jumpsuit: ClothingUniformJumpsuitPassengerQuarterzip
+

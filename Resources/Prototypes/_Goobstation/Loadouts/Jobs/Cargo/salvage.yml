@@ -15,7 +15,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobSalvageSpecialist
-      time: 72000 #20 hours
+      time: 0 #20 hours
 
 - type: loadoutEffectGroup
   id: GrandMasterSalvageSpecialist
@@ -24,7 +24,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobSalvageSpecialist
-      time: 360000 # 100 hrs
+      time: 0 # 100 hrs
 - type: loadout
   id: MinerCloak
   effects:
@@ -113,3 +113,4 @@
   id: ShaftMinerOveralls
   equipment:
     jumpsuit: ClothingUniformOverallsShaftMiner
+

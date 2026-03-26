@@ -54,13 +54,13 @@
     - MindRoleGhostRoleSoloAntagonist
     requirements:
     - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
+      time: 0 #5 hours
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 7200 #2 hours
+      time: 0 #2 hours
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 7200 #2 hours
+      time: 0 #2 hours
   - type: AbductorScientist
   - type: SurgeryIgnoreClothing
   - type: Sanitized
@@ -82,10 +82,10 @@
     - MindRoleGhostRoleTeamAntagonist
     requirements:
     - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
+      time: 0 #5 hours
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 10800 #3 hours
+      time: 0 #3 hours
   - type: AbductorScientist
   - type: SurgeryIgnoreClothing
   - type: Sanitized
@@ -107,10 +107,10 @@
     - MindRoleGhostRoleTeamAntagonist
     requirements:
     - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
+      time: 0 #5 hours
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 10800 #3 hours
+      time: 0 #3 hours
   - type: RandomMetadata
     nameSegments:
       - AbductorAgentPrefix
@@ -202,13 +202,13 @@
       settings: default
     requirements:
     - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
+      time: 0 #5 hours
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 7200 #2 hours
+      time: 0 #2 hours
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 7200 #2 hours
+      time: 0 #2 hours
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -244,10 +244,10 @@
       settings: default
     requirements:
     - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
+      time: 0 #5 hours
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 10800 #3 hours
+      time: 0 #3 hours
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -283,13 +283,14 @@
       settings: default
     requirements:
     - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
+      time: 0 #5 hours
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 10800 #3 hours
+      time: 0 #3 hours
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
       - state: green
       - sprite: Structures/Wallmounts/signs.rsi
         state: radiation
+

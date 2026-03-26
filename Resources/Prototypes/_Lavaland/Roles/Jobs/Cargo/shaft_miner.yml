@@ -7,7 +7,7 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Cargo
-    time: 9000 # 2.5 hrs
+    time: 0 # 2.5 hrs
   icon: "JobIconShaftMiner" # Orion-Edit: Changed to JobIconShaftMiner
   startingGear: ShaftMinerGear
   guides:
@@ -41,3 +41,4 @@
     outerClothing: ClothingOuterWinterMiner
     neck: ClothingNeckScarfStripedBrown
     gloves: ClothingHandsGlovesColorBlack
+

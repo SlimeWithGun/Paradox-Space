@@ -50,10 +50,10 @@
     requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000 # Ten Hours
+      time: 0 # Ten Hours
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 108000 # Thirty hours. Fuck you.
+      time: 0 # Thirty hours. Fuck you.
 
 # Navy Officer
 
@@ -518,3 +518,4 @@
     allowed:
     - PressureImmunity
     - Adrenaline
+
