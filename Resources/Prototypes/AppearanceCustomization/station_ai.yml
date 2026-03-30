@@ -48,29 +48,6 @@
   - StationAiIconLizard
   - StationAiIconVox
   # Orion-End
-  # <Trauma>
-#  - StationAiIconFirewall # Orion-Edit: Duplicate
-#  - StationAiIconDatabase # Orion-Edit: Duplicate
-#  - StationAiIconGlitchman # Orion-Edit: Duplicate
-  - StationAiIconHades
-#  - StationAiIconMatrix # Orion-Edit: Duplicate
-#  - StationAiIconMonochrome # Orion-Edit: Duplicate
-  - StationAiIconMurica
-#  - StationAiIconNanotrasen # Orion-Edit: Duplicate
-#  - StationAiIconPresident # Orion-Edit: Duplicate
-#  - StationAiIconRedDot # Orion-Edit: Duplicate
-#  - StationAiIconRed # Orion-Edit: Duplicate
-#  - StationAiIconTooDeep # Orion-Edit: Duplicate
-#  - StationAiIconTriumvirate # Orion-Edit: Duplicate
-#  - StationAiIconNotMalf # Orion-Edit: Duplicate
-#  - StationAiIconHelios # Orion-Edit: Duplicate
-#  - StationAiIconHouse # Orion-Edit: Duplicate
-#  - StationAiIconRainbow # Orion-Edit: Duplicate
-#  - StationAiIconAlien # Orion-Edit: Duplicate
-#  - StationAiIconGoon # Orion-Edit: Duplicate
-#  - StationAiIconWeird # Orion-Edit: Duplicate
-#  - StationAiIconInverted # Orion-Edit: Duplicate
-  # </Trauma>
 
 - type: stationAiCustomizationGroup
   id: StationAiHolograms
