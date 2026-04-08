@@ -42,7 +42,8 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    staticPacks:
+    dynamicPacks: # Orion-Edit: Static > Dynamic
+    - AbductorEngineering # Orion
     - SharedBoardsStatic
     - EngineeringBoardsStatic
     - CircuitFloorsStatic
@@ -52,12 +53,12 @@
     - CablesStatic
     - MaterialsStatic
     - LightsStatic
+    - LatheMiscStatic
     - PowerCellsStatic
     - ElectronicsStatic
     - MiscSignallersStatic
     - NailgunStatic
     - NailsStatic
-    dynamicPacks:
     # Orion-Start
     - MegaCells
     # Orion-End
@@ -114,16 +115,17 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    staticPacks:
+    dynamicPacks: # Orion-Edit: Static > Dynamic
     - ToolsStatic
     - SharedBoardsStatic
     - CargoBoardsStatic
     - CablesStatic
+    - PartsStatic
+    - LatheMiscStatic
     - PowerCellsStatic
     - MiningToolsStatic
     - MiscSignallersStatic
     - CargoStatic
-    dynamicPacks:
     # Orion-Start
     - MegaCells
     # Orion-End
@@ -181,7 +183,7 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    staticPacks:
+    dynamicPacks: # Orion-Edit: Static > Dynamic
     - SharedBoardsStatic
     - EngineeringBoardsStatic
     - CircuitFloorsStatic
@@ -189,6 +191,7 @@
     - MedicalBoardsStaticGoob
     - ToolsStatic
     - PartsStatic
+    - LatheMiscStatic
     - AtmosStatic
     - CablesStatic
     - MaterialsStatic
@@ -201,7 +204,6 @@
     - ScienceExplosives # Goobstation - Roundstart Grenade Tech
     - GrenadeTriggersStatic # Goobstation - Roundstart Grenade Tech
     - MiscSignallersStatic
-    dynamicPacks:
     # Orion-Start
     - BodyBagsDynamic
     - MegaCells
@@ -275,7 +277,7 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    staticPacks:
+    dynamicPacks: # Orion-Edit: Static > Dynamic
     - ServiceBoardsStatic
     - ServiceBoardsStaticGoob
     - MaterialsStatic
@@ -283,11 +285,14 @@
     - ServiceStatic
     - PowerCellsStatic
     - LatheMiscStatic
+    - PartsStatic
     - ChemistryStatic
     - TapeRecorderStatic
     - CondimentStatic
-    dynamicPacks:
-    - OrionService # Orion
+    # Orion-Start
+    - BasicService
+    - Hydroponic
+    # Orion-End
     - Janitor
     - Instruments
     - FauxTiles

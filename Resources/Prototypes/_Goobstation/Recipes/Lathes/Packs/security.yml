@@ -25,6 +25,7 @@
   recipes:
   - GrenadeFlashBang
   - BolaEnergy
+  - BodyBag #A pile of rotting rev carcases is on my hands.
 
 - type: latheRecipePack
   id: SecurityHypoStatic
@@ -68,7 +69,7 @@
   - WeaponLaserCellSMG
   - WeaponLaserCellSniper
   - ClothingBackpackLMGBattery
-  - ClothingEyesGlassesSecurityContraDetect
+#  - ClothingEyesGlassesSecurityContraDetect # Orion-Edit
 
 - type: latheRecipePack
   id: SecurityAmmoGoob

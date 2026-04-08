@@ -342,8 +342,8 @@
     bounds: -0.5,-0.5,0.5,0.5
   - type: HasJobIcons # Goobstation
   - type: RotationVisuals
-    defaultRotation: 90
-    horizontalRotation: 90
+    defaultRotation: -90 # Orion-Edit
+    horizontalRotation: -90 # Orion-Edit
   - type: HumanoidAppearance
     species: Human
   - type: TypingIndicator
@@ -462,8 +462,6 @@
       # Goobstation - changelings
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface
-      enum.HereticLivingHeartKey.Key: # goob edit - heretics
-        type: LivingHeartMenuBoundUserInterface
       enum.WizardTeleportUiKey.Key: # Goobstation - wizard
         type: WizardTeleportBoundUserInterface
         requireInputValidation: false
@@ -600,6 +598,7 @@
     - Bacterial
     - Parasite
   # </Goobstation>
+  - type: Mood # Orion
 
 - type: entity
   save: false

@@ -133,6 +133,7 @@ using Content.Shared.ActionBlocker;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
+using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage.ForceSay;
 using Content.Shared.Database;
 using Content.Shared.Examine;
@@ -141,6 +142,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Players;
 using Content.Shared.Players.RateLimiting;
+using Content.Shared.Popups;
 using Content.Shared.Radio;
 using Content.Shared.Station.Components;
 using Content.Shared.Whitelist;
@@ -155,6 +157,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
+using Content.Shared._RMC14.CCVar;
 
 namespace Content.Server.Chat.Systems;
 
@@ -206,6 +209,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     private bool _loocEnabled = true;
     private bool _deadLoocEnabled;
     private bool _critLoocEnabled;
+    private bool _DeadchatEnabled; // RMC14
     private readonly bool _adminLoocEnabled = true;
 
     public override void Initialize()
@@ -215,6 +219,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         Subs.CVar(_configurationManager, CCVars.LoocEnabled, OnLoocEnabledChanged, true);
         Subs.CVar(_configurationManager, CCVars.DeadLoocEnabled, OnDeadLoocEnabledChanged, true);
         Subs.CVar(_configurationManager, CCVars.CritLoocEnabled, OnCritLoocEnabledChanged, true);
+        Subs.CVar(_configurationManager, RMCCVars.RMCDeadChatEnabled, OnDeadChatEnabledChanged, true); // RMC14
 
         SubscribeLocalEvent<GameRunLevelChangedEvent>(OnGameChange);
     }
@@ -245,6 +250,16 @@ public sealed partial class ChatSystem : SharedChatSystem
         _critLoocEnabled = val;
         _chatManager.DispatchServerAnnouncement(
             Loc.GetString(val ? "chat-manager-crit-looc-chat-enabled-message" : "chat-manager-crit-looc-chat-disabled-message"));
+    }
+
+        private void OnDeadChatEnabledChanged(bool val)
+    {
+        if (_DeadchatEnabled == val)
+            return;
+
+        _DeadchatEnabled = val;
+        _chatManager.DispatchServerAnnouncement(
+            Loc.GetString(val ? "set-dchat-command-dchat-enabled" : "set-dchat-command-dchat-disabled"));
     }
 
     private void OnGameChange(GameRunLevelChangedEvent ev)
@@ -412,7 +427,18 @@ public sealed partial class ChatSystem : SharedChatSystem
         // This message may have a radio prefix, and should then be whispered to the resolved radio channel
         if (checkRadioPrefix)
         {
-            if (TryProccessRadioMessage(source, message, out var modMessage, out var channel))
+            // Orion-Start
+            if (IsRadioPrefixMessage(message) && !CanUseRadio(source))
+            {
+                if (TryProccessRadioMessage(source, message, out var fallbackMessage, out _, quiet: true))
+                    message = fallbackMessage;
+
+                desiredType = InGameICChatType.Whisper;
+                checkRadioPrefix = false;
+            }
+            // Orion-End
+
+            if (checkRadioPrefix && TryProccessRadioMessage(source, message, out var modMessage, out var channel)) // Orion-Edit
             {
                 SendEntityWhisper(source, modMessage, range, channel, nameOverride, language, hideLog, ignoreActionBlocker, colorOverride); // Goob edit & Einstein Engines - Language
                 return;
@@ -458,6 +484,32 @@ public sealed partial class ChatSystem : SharedChatSystem
                 break;
         }
     }
+
+    // Orion-Start
+    private bool IsRadioPrefixMessage(string message)
+    {
+        return message.StartsWith(RadioCommonPrefix) ||
+               message.StartsWith(RadioChannelPrefix) ||
+               message.StartsWith(RadioChannelAltPrefix);
+    }
+
+    private bool CanUseRadio(EntityUid source)
+    {
+        if (_mobStateSystem.IsCritical(source))
+        {
+            _popupSystem.PopupEntity(Loc.GetString("chat-manager-cannot-radio-while-critical"), source, source);
+            return false;
+        }
+
+        if (TryComp<CuffableComponent>(source, out var cuffable) && cuffable.CuffedHandCount > 0)
+        {
+            _popupSystem.PopupEntity(Loc.GetString("chat-manager-cannot-radio-with-bound-hands"), source, source);
+            return false;
+        }
+
+        return true;
+    }
+    // Orion-End
 
     public void TrySendInGameOOCMessage(
         EntityUid source,
@@ -1118,6 +1170,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         string wrappedMessage;
 
         var speech = GetSpeechVerb(source, message); // Goobstation - Dead chat verbs
+
+        if (!_adminManager.IsAdmin(player) && !_DeadchatEnabled) // RMC14 - Check the status of the "rmc.dead_chat_enabled" CCvar before continuing.
+            return;
 
         // Orion-Start
         if (_chatProtection.CheckOOCMessage(message, player)) // Not IC because can use OOC words.
